@@ -10,7 +10,7 @@ const ProductAll = ({checkIdentity}) => {
   const [productList,setProductList]=useState([]);
   const [searchParams,setSearchParams]=useSearchParams();
   const getProducts=async()=>{
-    let search=searchParams.get("q");
+    let search=searchParams.get("q")||"";
     let url=(search==null?`https://my-json-server.typicode.com/kimtaejin93/hnm`:`https://my-json-server.typicode.com/kimtaejin93/hnm/products/?q=${search}`);
     let response=await fetch(url);
     let data=await response.json();
